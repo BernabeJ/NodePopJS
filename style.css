@@ -37,3 +37,23 @@
     transform: rotate(360deg);
   }
 }
+
+/*ventana de error*/
+.error {
+  color: red;
+  padding: 20px;
+  border: 2px solid red;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+/*ventana de success*/
+.success {
+  color: green;
+  padding: 20px;
+  border: 2px solid green;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
