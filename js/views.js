@@ -5,8 +5,11 @@ export function anuncioView(anuncio) {
          return`<a href ="/detail.html?id=${anuncio.id}">
         <div class="anuncio">
         <strong class = "message">${anuncio.message}</strong>
+        <img class ="foto" src=${anuncio.foto}>
+        <p class = "tags"> ${anuncio.tag}</p>
+        <p class = "precio"> ${anuncio.precio}</p>
+        <p class = "compra_venta"> ${anuncio.compra_venta}</p>
         <p class = "user" >${anuncio.author}</p>
-        <p class = "tags"> ${anuncio.tags}</p>
         <p class = "date"> ${anuncio.date}</p>
         </div>
         <hr>
@@ -33,9 +36,19 @@ export function loaderView() {
 }
 
 export function anuncioDetailView(anuncio) {
+        if (anuncio === null) {
+                return '<h1>:( No existe ese Anuncio'
+        }
+        let button = ''
+        if (anuncio.canBeDeleted) {
+                button = '<button class="deleted">Borrar</button>'
+        }
         return `
         <p style="font-size:2em">${anuncio.message}</p>
+        <img src=${anuncio.foto}>
+        <p>${anuncio.tag}</p>
         <strong class="author">${anuncio.author}</strong> -
         <time datetime ="${anuncio.date}">${anuncio.date}</time>
+        ${button}
         `
 }

@@ -17,7 +17,11 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //Seleccionamos el nodo para mostrar mensajes de error o éxito
     const messages = document.querySelector('.messages')
+    const tags = document.querySelector('.tags')
+    const precio = document.querySelector('.precio')
+  
 
     //Crear una instacia de ErrorMessageController
-     new MessageController(messages)
+    new MessageController(messages)
+    
 })

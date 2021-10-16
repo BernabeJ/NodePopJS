@@ -2,11 +2,12 @@
 export default {
 
     parseAnuncio: function (anuncio) {
-          anuncio.date = anuncio.date || anuncio.updatedAt
-                //nos aseguramos que no puedan introducir codigo malicioso
-                anuncio.message = anuncio.message.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-                anuncio.author = anuncio.user.username
-                return anuncio
+        anuncio.date = anuncio.date || anuncio.updatedAt
+        //nos aseguramos que no puedan introducir codigo malicioso
+        anuncio.message = anuncio.message.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        anuncio.author = anuncio.user.username
+        anuncio.canBeDeleted = anuncio.userId ===  this.getAuthUserId()
+        return anuncio
     },
     
     getAnuncios: async function () {
@@ -27,13 +28,30 @@ export default {
             const anuncio = await response.json()
             return this.parseAnuncio(anuncio)
         } else {
+            if (response.status === 404) {
+                return null
+            }
             throw new Error('Error al cargar el anuncio')
         }
     },
 
+     delete: async function(url, body={}) {
+        return await this.request('DELETE', url, body)
+    },
+
+
     post: async function (url, body) {
+        return await this.request('POST', url, body)
+    },
+
+     put: async function (url, body) {
+        return await this.request('PUT', url, body)
+    },
+
+
+   request: async function (method, url, body) {
       const requestConfig = {
-            method: 'POST',
+            method: method,
             headers: {
                 'content-type': 'application/json'
             },
@@ -71,15 +89,43 @@ export default {
        
     },
 
-    createAnuncio: async function (text) {
+    createAnuncio: async function (text, tag, precio, compra_venta, foto) {
         const url = 'http://localhost:8000/api/anuncios'
-        return this.post(url, {message:text})
+        return await this.post(url, { message: text, tag:tag, precio:precio, compra_venta:compra_venta, foto })
     },
 
     isAuthenticed: function () {
         return localStorage.getItem('AUTH_TOKEN') !== null
+    },
+
+    
+    
+    deleteAnuncio: async function (anuncioId) {
+        const url = `http://localhost:8000/api/anuncios/${anuncioId}`
+        return await this.delete(url)
+    },
+    
+    
+    getAuthUserId: function () {
+        const token = localStorage.getItem('AUTH_TOKEN')
+        if (token === null) {
+            return null
+        }
+        const b64Parts = token.split('.')
+        if (b64Parts.length !== 3) {
+            return null
+        }
+        const b64Data = b64Parts[1]
+        try {
+            const userJSON = atob(b64Data)
+            const user = JSON.parse(userJSON)
+            return user.userId
+            
+        } catch {
+            console.error('Error while decoding JWT token', error)
+            return null
+        }
     }
-
-
+    
 
 }

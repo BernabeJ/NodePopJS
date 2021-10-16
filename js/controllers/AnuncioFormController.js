@@ -13,8 +13,12 @@ export default class AnuncioFormController {
             if (this.element.checkValidity()) {
                 const data = new FormData(this.element)
                 const message = data.get('message')
+                const tag = data.get(['tag'])
+                const precio = data.get('precio')
+                const compra_venta = data.get('compra_venta')
+                const foto = data.get('foto')
                 try {
-                    const result = await DataService.createAnuncio(message)
+                    const result = await DataService.createAnuncio(message,tag,precio,compra_venta,foto)
                     PubSub.publish(PubSub.events.SHOW_SUCCESS, 'Anuncio Creado')
                 } catch (error) {
                     PubSub.publish(PubSub.events.SHOW_ERROR, error)
