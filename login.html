@@ -5,23 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f68f3fc89e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style-form.css">
+    <script src="js/app.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>Login - NodePop</title>
 </head>
 
 <body>
-    <h1>Inicia Sesión en NodePop</h1>
+    <nav class="menu">
+        <label class="logo">NodePop</label>
+        <!-- <input type="search" name="search" id="search" placeholder="Buscar..."> -->
+        <ul class="menu_items">
+            <li><a href="http://localhost:3000">Home</a></li>
+            <li class="active"><a href="http://localhost:3000/login.html">Login</a></li>
+            <li><a href="http://localhost:3000/signup.html">Crear Usuario</a></li>
+            <li><a href="http://localhost:3000/new.html">Crear Anuncio</a></li>
+
+        </ul>
+        <!--metemos el boton del menu responsive-->
+        <span class="btn_menu">
+            <i class="fas fa-bars"></i>
+        </span>
+    </nav>
     <div class="error-message"></div>
     <form novalidate>
-        <div>
-            <input type="text" name="username" placeholder="Escibe aquí tu usuario" required autofocus>
-        </div>
-        <div>
-            <input type="password" name="password" placeholder="Escribe aquí tu contraseña" required>
-        </div>
-
-        <div>
-            <button type="submit">Login</button>
+        <div class="login-container">
+            <img src="logo2.png" alt="logo de la pagina">
+            <p>Inicia Sesión en NodePop</p>
+            <div class="fields">
+                <div class="data">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="username" placeholder="Usuario" required autofocus>
+                </div>
+                <div class="data">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                </div>
+            </div>
+            <button class="btn-login" type="submit">Login</button>
         </div>
     </form>
     <script type="module" src="js/login.js"></script>

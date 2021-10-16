@@ -1,6 +1,6 @@
 import AnuncioListController from './controllers/AnuncioListController.js '
 import ErrorMessageController from './controllers/ErrorMessageController.js';
-import SearchController from './controllers/SearchController.js';
+// import SearchController from './controllers/SearchController.js';
 
 window.addEventListener('DOMContentLoaded', function () {
     //controlador de mensajes de error
@@ -18,8 +18,8 @@ window.addEventListener('DOMContentLoaded', function () {
     //decir al controlador que pinte los anuncios
     anuncioListController.renderAnuncios()
 
-    const search = document.querySelector('#search')
-    new SearchController(search)
+    // const search = document.querySelector('#search')
+    // new SearchController(search)
 
     
 

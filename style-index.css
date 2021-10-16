@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.anuncio-list {
+  width: 90%;
+  margin: 0 auto;
+  padding: 60px 0;
+  max-width: 1200px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 3.5em;
+}
+
+.anuncio {
+  flex-basis: 280px;
+  background: #ccc;
+  width: 300px;
+  height: 500px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.foto {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+
+  justify-content: center;
+}

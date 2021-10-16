@@ -4,8 +4,8 @@ export function anuncioView(anuncio) {
        
          return`<a href ="/detail.html?id=${anuncio.id}">
         <div class="anuncio">
-        <strong class = "message">${anuncio.message}</strong>
         <img class ="foto" src=${anuncio.foto}>
+        <strong class = "message">${anuncio.message}</strong>
         <p class = "tags"> ${anuncio.tag}</p>
         <p class = "precio"> ${anuncio.precio}</p>
         <p class = "compra_venta"> ${anuncio.compra_venta}</p>
@@ -19,7 +19,7 @@ export function anuncioView(anuncio) {
 export function errorView(message){
         return `<div class="error">
         ${message}
-        <button>Cerrar</button>
+        <button class="button_error">X</button>
         </div>`
 }
 

@@ -7,13 +7,14 @@
   box-sizing: border-box;
 }
 
+/*estilos nav*/
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f4f4f4;
 }
 
 .menu {
-  background-color: #e9183b;
+  background-color: #203a43;
   height: 75px;
   width: 100vw;
   display: flex;
@@ -21,6 +22,110 @@ body {
   align-items: center;
   border-bottom: 1px solid #fff;
   box-shadow: 5px 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+  color: #fff;
+  font-size: 35px;
+  padding: 0 80px;
+  font-weight: bold;
+}
+
+.menu_items {
+  display: flex;
+  list-style: none;
+  margin-right: 30px;
+}
+
+.menu_items li {
+  border-radius: 3px;
+  margin: 0 5px;
+}
+
+.menu_items li a {
+  padding: 7px 13px;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.btn_menu {
+  margin-right: 30px;
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+ul.show {
+  top: 65px;
+}
+
+.menu_items li:hover,
+li.active {
+  background-color: rgb(0, 0, 0, 0.3);
+  transition: 0.4s;
+}
+
+@media screen and(max-width:952px) {
+  logo {
+    font-size: 30px;
+    padding-left: 35px;
+  }
+  .menu_items li a {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 858px) {
+  .menu {
+    height: 65px;
+  }
+  .btn_menu {
+    display: inline-flex;
+  }
+  .menu_items {
+    position: fixed;
+    width: 100vw;
+    height: calc(100% - 65px);
+    background: #414141;
+    top: -100vh;
+    text-align: center;
+    transition: all 0.4s;
+    flex-direction: column;
+    z-index: 9999;
+  }
+  .menu_items li {
+    margin: 30px 0 0 0;
+    line-height: 30px;
+  }
+  .menu_items li:hover {
+    background: none;
+  }
+  .menu_items li a {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+  }
+  .menu_items li a:hover {
+    color: #000;
+  }
+  .logo {
+    font-size: 25px;
+    padding-left: 35px;
+  }
+}
+
+@media screen and (max-width: 858px) and (orientatio: landscape) {
+  .menu_items li {
+    margin: 5px 0 0 0;
+  }
+  .menu_items {
+    overflow: scroll;
+    height: calc(100% - 65px);
+  }
 }
 
 /* Loader */
@@ -65,12 +170,20 @@ body {
 
 /*ventana de error*/
 .error {
-  color: red;
+  color: #fff;
+  background: #414141;
+  border-radius: 30px;
   padding: 20px;
-  border: 2px solid red;
+  border: 2px solid #203a43;
   position: absolute;
   top: 40%;
   left: 40%;
+  z-index: 999999;
+}
+
+.button_error {
+  background: #414141;
+  color: #fff;
 }
 
 /*ventana de success*/
