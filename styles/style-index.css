@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Amatic SC", cursive;
+}
+
+a {
+  text-decoration: none;
+}
+
+.anuncio-list {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 3.5em;
+}
+
+.anuncio {
+  flex-basis: 280px;
+  background: #fff;
+  width: 300px;
+  height: 500px;
+  margin: 0 auto;
+  align-items: center;
+  border-radius: 10%;
+}
+
+.foto {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 10%;
+  justify-content: center;
+}
+
+article {
+  color: black;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.message {
+  color: black;
+  font-size: 40px;
+}
+
+.tags,
+.precio,
+.compra_venta,
+.user,
+.date {
+  color: black;
+  font-size: 20px;
+}
+
+h1 {
+  margin: 10px;
+  text-align: center;
+}

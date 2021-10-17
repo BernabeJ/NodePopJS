@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/f68f3fc89e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style-detail.css">
     <script src="js/app.js" defer></script>
     <title>Detail-Nodepop</title>
 </head>
@@ -16,7 +17,7 @@
         <label class="logo">NodePop</label>
         <!-- <input type="search" name="search" id="search" placeholder="Buscar..."> -->
         <ul class="menu_items">
-            <li class="active"><a href="http://localhost:3000">Home</a></li>
+            <li><a href="http://localhost:3000">Home</a></li>
             <li><a href="http://localhost:3000/login.html">Login</a></li>
             <li><a href="http://localhost:3000/signup.html">Crear Usuario</a></li>
             <li><a href="http://localhost:3000/new.html">Crear Anuncio</a></li>
@@ -28,8 +29,10 @@
         </span>
     </nav>
     <div class="loader"></div>
-    <div class="messages"></div>
-    <div class="anuncio"></div>
+    <div class="container">
+        <div class="messages"></div>
+        <div class="anuncio"></div>
+    </div>
     <script type="module" src="js/detail.js"></script>
 </body>
 

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style-new.css">
     <script src="https://kit.fontawesome.com/f68f3fc89e.js" crossorigin="anonymous"></script>
     <script src="js/app.js" defer></script>
     <title>Nuevo Anuncio</title>
@@ -16,10 +17,10 @@
         <label class="logo">NodePop</label>
         <!-- <input type="search" name="search" id="search" placeholder="Buscar..."> -->
         <ul class="menu_items">
-            <li class="active"><a href="http://localhost:3000">Home</a></li>
+            <li><a href="http://localhost:3000">Home</a></li>
             <li><a href="http://localhost:3000/login.html">Login</a></li>
             <li><a href="http://localhost:3000/signup.html">Crear Usuario</a></li>
-            <li><a href="http://localhost:3000/new.html">Crear Anuncio</a></li>
+            <li class="active"><a href="http://localhost:3000/new.html">Crear Anuncio</a></li>
 
         </ul>
         <!--metemos el boton del menu responsive-->
@@ -27,20 +28,23 @@
             <i class="fas fa-bars"></i>
         </span>
     </nav>
-    <h1>Nuevo Anuncio</h1>
-    <div class="messages"></div>
-    <form novalidate>
-        <textarea name="message" placeholder="Escribe tu anuncio..."></textarea>
-        <div class="foto"></div>
-        <textarea name="foto" placeholder="indica la url de la foto"></textarea>
-        <div class="tags"></div>
-        <textarea name="tag" placeholder="Escribe los tags..."></textarea>
-        <div class="precio"></div>
-        <textarea name="precio" placeholder="Escribe el precio..."></textarea>
-        <div class="compra_venta"></div>
-        <textarea name="compra_venta" placeholder="Escribe si es compra o venta..."></textarea>
-        <button type="submit">Enviar</button>
-    </form>
+    <div class="container">
+        <h1>Nuevo Anuncio</h1>
+        <div class="error-message"></div>
+        <div class="messages"></div>
+        <form novalidate>
+            <textarea name="message" placeholder="Escribe tu anuncio..." required autofocus></textarea>
+            <div class="foto"></div>
+            <textarea name="foto" placeholder="indica la url de la foto"></textarea>
+            <div class="tags"></div>
+            <textarea name="tag" placeholder="Escribe los tags..." required></textarea>
+            <div class="precio"></div>
+            <textarea name="precio" placeholder="Escribe el precio..." required></textarea>
+            <div class="compra_venta"></div>
+            <textarea name="compra_venta" placeholder="Escribe si es compra o venta..." required></textarea>
+            <button class="enviar" type="submit">Enviar</button>
+        </form>
+    </div>
 </body>
 <script type="module" src="js/new.js"></script>
 

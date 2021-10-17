@@ -5,8 +5,12 @@ export default {
         anuncio.date = anuncio.date || anuncio.updatedAt
         //nos aseguramos que no puedan introducir codigo malicioso
         anuncio.message = anuncio.message.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-        anuncio.author = anuncio.user.username
-        anuncio.canBeDeleted = anuncio.userId ===  this.getAuthUserId()
+        anuncio.author = anuncio.user.username.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        anuncio.foto = anuncio.foto.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        anuncio.precio = anuncio.precio.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        anuncio.compra_venta = anuncio.compra_venta.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        anuncio.tag = anuncio.tag.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        anuncio.canBeDeleted = anuncio.userId === this.getAuthUserId()
         return anuncio
     },
     

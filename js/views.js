@@ -6,13 +6,12 @@ export function anuncioView(anuncio) {
         <div class="anuncio">
         <img class ="foto" src=${anuncio.foto}>
         <strong class = "message">${anuncio.message}</strong>
-        <p class = "tags"> ${anuncio.tag}</p>
-        <p class = "precio"> ${anuncio.precio}</p>
+        <p class = "tags"> Tags: ${anuncio.tag}</p>
+        <p class = "precio"> Precio: ${anuncio.precio} €</p>
         <p class = "compra_venta"> ${anuncio.compra_venta}</p>
-        <p class = "user" >${anuncio.author}</p>
-        <p class = "date"> ${anuncio.date}</p>
+        <p class = "user" >Autor: ${anuncio.author}</p>
+        <p class = "date">Fecha: ${anuncio.date}</p>
         </div>
-        <hr>
         </a>`
 }
 
@@ -44,11 +43,13 @@ export function anuncioDetailView(anuncio) {
                 button = '<button class="deleted">Borrar</button>'
         }
         return `
-        <p style="font-size:2em">${anuncio.message}</p>
-        <img src=${anuncio.foto}>
-        <p>${anuncio.tag}</p>
+        <p style="font-size:2em" class="message">${anuncio.message}</p>
+        <img class="foto" src=${anuncio.foto}>
+        <p class="precio">Precio: ${anuncio.precio}€</p>
+        <p class="tags">Tags: ${anuncio.tag}</p>
+        <p class="compra-venta">Estado: ${anuncio.compra_venta}</p>
         <strong class="author">${anuncio.author}</strong> -
-        <time datetime ="${anuncio.date}">${anuncio.date}</time>
+        <time datetime class= "time""${anuncio.date}">Fecha: ${anuncio.date}</time></br>
         ${button}
         `
 }

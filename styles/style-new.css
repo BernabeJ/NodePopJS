@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Amatic SC", cursive;
+}
+
+.container {
+  width: 450px;
+  margin: auto;
+  background: #203a43;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  border-radius: 7px;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 7px;
+  box-sizing: border-box;
+  font-size: 17px;
+  border: none;
+  min-height: 80px;
+  max-height: 150px;
+  max-width: 100%;
+}
+
+.enviar {
+  padding: 20px;
+  width: 100%;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.enviar:hover {
+  background: #203a43;
+  color: #fff;
+}

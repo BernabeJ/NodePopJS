@@ -8,6 +8,8 @@ window.addEventListener('DOMContentLoaded', function () {
     const errorMessageController = new ErrorMessageController(errorDiv)
 
 
+
+    
      //coger el elemento del DOM (HTML), donde quiero cargar los anuncios
     const anuncioListDiv = document.querySelector('.anuncio-list');
 
@@ -18,8 +20,7 @@ window.addEventListener('DOMContentLoaded', function () {
     //decir al controlador que pinte los anuncios
     anuncioListController.renderAnuncios()
 
-    // const search = document.querySelector('#search')
-    // new SearchController(search)
+  
 
     
 

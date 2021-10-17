@@ -11,6 +11,7 @@ export default class AnuncioListController{
     }
 
     async renderAnuncios() {
+      
         try {
             const anuncios = await DataService.getAnuncios();
             for (const anuncio of anuncios) {
