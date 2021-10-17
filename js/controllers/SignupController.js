@@ -42,12 +42,16 @@ export default class SignupController{
             //comprobar si el formulario valido
             if (this.element.checkValidity()) {
                 //registrar usuario
-                try {
                     const data = new FormData(this.element)
                     const username = data.get('username')
                     const password = data.get('password')
+                    const url = new URLSearchParams(window.location.search)
+                    const next = url.get('next') || '/'
+                    
+                    try {
                     const result = await DataService.registerUser(username, password)
-                    PubSub.publish(PubSub.events.SHOW_SUCCESS, 'Registrado correctamente')
+                   
+                    PubSub.publish(PubSub.events.SHOW_SUCCESS, 'Registrado correctamente',location.href= next )
                     
                 } catch(error) {
                     PubSub.publish(PubSub.events.SHOW_ERROR,error)

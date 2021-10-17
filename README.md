@@ -2,7 +2,7 @@
 
 ### Tu web de compra y venta
 
-Site diseñado para simular un portal de compra y venta empleando tecnologia HTML CSS y JAVASCRIPT, se han hecho uso de recursos como PubSub (Publish Subscribe pattern) y se ha seguido el modelo de MVC (módelo, vista, controlador), tambien nos hemos apoyado en un servidor backend llamado Sparrest, creado por Alberto Casero.
+Site diseñado para simular un portal de compra y venta empleando tecnologia HTML CSS y JAVASCRIPT, se han hecho uso de recursos como PubSub (Publish Subscribe pattern) y se ha seguido el modelo de MVC (módelo, vista, controlador), tambien nos hemos apoyado en un servidor backend llamado Sparrest, creado por **Alberto Casero**.
 
 A continuacion se detalla como descargar y usar Sparrest.
 Tambien se añade a modo ejemplo un archivo db.json, para poder probar el maquetado de la página.

@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+
+.boton {
+  font-family: "Amatic SC", Arial, Helvetica, sans-serif;
+  width: 70%;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 30px;
+}
+
+.boton:active {
+  background: #203a43;
+  color: #fff;
+}
